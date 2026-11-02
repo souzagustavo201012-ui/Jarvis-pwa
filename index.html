@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="JARVIS, seu assistente pessoal.">
+  <title>JARVIS — Assistente Pessoal</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">J</div><div><strong>J.A.R.V.I.S.</strong><small>ASSISTENTE PESSOAL</small></div></div>
+      <div class="status"><span class="pulse"></span><span id="statusText">SISTEMA PRONTO</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">INTERFACE PESSOAL • V 1.0</div>
+        <h1>Bom ter você<br><span>por aqui.</span></h1>
+        <p>Seu assistente pessoal, direto no celular.</p>
+        <div class="core-wrap">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <button class="core" id="voiceButton" aria-label="Ativar comando de voz"><span class="core-inner"><span class="mic">⌁</span><small>TOQUE PARA FALAR</small></span></button>
+        </div>
+        <div class="voice-hint" id="voiceHint">Toque no núcleo e diga um comando.</div>
+      </section>
+
+      <section class="command-card">
+        <label for="commandInput">COMANDO</label>
+        <div class="command-row">
+          <input id="commandInput" type="text" placeholder="Ex.: que horas são? / anote estudar matemática" autocomplete="off">
+          <button id="sendButton" class="send" aria-label="Enviar comando">➜</button>
+        </div>
+        <div class="quick-actions">
+          <button data-command="Que horas são?">HORAS</button>
+          <button data-command="Abra o YouTube">YOUTUBE</button>
+          <button data-command="Quanto é 25 vezes 4?">CALCULAR</button>
+          <button data-command="Ajuda">AJUDA</button>
+        </div>
+      </section>
+
+      <section class="response-card">
+        <div class="section-heading"><span>RESPOSTA DO JARVIS</span><span class="tiny-dot"></span></div>
+        <div id="response" aria-live="polite">Olá! Estou pronto para ajudar. Experimente falar comigo ou digitar um comando.</div>
+        <div class="response-actions"><button id="speakButton">▶ OUVIR RESPOSTA</button><button id="clearButton">LIMPAR</button></div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-title"><span>◈</span> MEMÓRIA / NOTAS</div>
+          <form id="noteForm"><input id="noteInput" placeholder="Escreva uma anotação..." maxlength="180"><button class="mini-button" type="submit">SALVAR</button></form>
+          <ul id="notesList" class="notes-list"></ul>
+        </article>
+        <article class="panel">
+          <div class="panel-title"><span>◷</span> LEMBRETES</div>
+          <form id="reminderForm" class="reminder-form">
+            <input id="reminderText" placeholder="O que lembrar?" maxlength="100" required>
+            <input id="reminderTime" type="datetime-local" required>
+            <button class="mini-button" type="submit">CRIAR LEMBRETE</button>
+          </form>
+          <ul id="remindersList" class="notes-list"></ul>
+          <p class="muted small">Os avisos funcionam enquanto o app estiver aberto. O navegador pode limitar notificações em segundo plano.</p>
+        </article>
+      </section>
+
+      <section class="panel tools-panel">
+        <div class="panel-title"><span>⌘</span> ACESSO RÁPIDO</div>
+        <div class="tool-grid">
+          <a href="https://www.google.com" target="_blank" rel="noopener">Google <small>BUSCAR</small></a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube <small>VÍDEOS</small></a>
+          <a href="https://mail.google.com" target="_blank" rel="noopener">Gmail <small>E-MAIL</small></a>
+          <a href="https://calendar.google.com" target="_blank" rel="noopener">Agenda <small>CALENDÁRIO</small></a>
+        </div>
+      </section>
+    </main>
+    <footer>JARVIS • PROJETO PESSOAL <span>Seus dados ficam neste dispositivo.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
